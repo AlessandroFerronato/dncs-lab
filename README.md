@@ -148,7 +148,7 @@ I created four different subnets:
 |  Host-c  |   enp0s8   |  192.168.4.2  |   4    |
 
 
-I created two VLANs for subnet 2 and 3, which respectively the Tag 2 and 3.
+I created two VLANs for subnet 2 and 3, which respectively have the Tag 2 and 3.
 
 ## Realization
 
@@ -167,7 +167,7 @@ Down below there is a list of the commands used:
 - ```ip link add link [original_interface] name [VLAN] type vlan id [tag]``` to create a VLAN named [VLAN] from the interface [original_interface] and that add the tag [tag] to the traffic passing through that VLAN;
 - ```sysctl -w net.ipv4.ip_forward=1``` to enable the IPv4 forwarding in the two routers;
 
-I would like to focus on the setup of the switch, assigning the VLAN tags to the ports.
+I would like to focus on the setup of the switch and the assigningment of the VLAN tags to the ports.
 First I created a bridge named "switch" with the command ```ovs-vsctl add-br switch```.
 Then I configured the ports with the following commands:
 ```
@@ -176,7 +176,7 @@ Then I configured the ports with the following commands:
  ovs-vsctl add-port switch enp0s10 tag="3"
  ```
 
-In the end one of the requirements I needed to implement was to enable *Host-c* to run a docker image, so I started with this configuration:
+In the end I needed to enable *Host-c* to run a docker image, so I started with this configuration:
 ```
  apt-get update
  apt-get -y install docker.io
