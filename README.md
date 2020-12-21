@@ -167,7 +167,7 @@ Down below there is a list of the commands used:
 - ```ip link add link [original_interface] name [VLAN] type vlan id [tag]``` to create a VLAN named [VLAN] from the interface [original_interface] and that add the tag [tag] to the traffic passing through that VLAN;
 - ```sysctl -w net.ipv4.ip_forward=1``` to enable the IPv4 forwarding in the two routers;
 
-I would like to focus on the setup of the switch and the assigningment of the VLAN tags to the ports.
+I would like to focus on the setup of the switch and the assignment of the VLAN tags to the ports.
 First I created a bridge named "switch" with the command ```ovs-vsctl add-br switch```.
 Then I configured the ports with the following commands:
 ```
